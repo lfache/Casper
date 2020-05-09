@@ -30,6 +30,9 @@ production stylesheet in assets/built/screen.css
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 @import "global.css";
+@import "custom/global.css";
+@import "custom/darkmode.css";
+
 
 body {
     background: #fff;
@@ -2858,7 +2861,7 @@ Usage (In Ghost editor):
 
 
 /* 12. Dark Mode
-/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- 
 @media (prefers-color-scheme: dark) {
     body {
         color: rgba(255, 255, 255, 0.75);
@@ -3076,4 +3079,4 @@ Usage (In Ghost editor):
     .subscribe-form .success .message-success {
         color: color(var(--green) l(+5%) s(-5%));
     }
-}
+}*/

@@ -120,6 +120,12 @@
         });
     </script>
 
+    {{!-- switches: showcase & support_fizzy --}}
+    <script>
+        if (typeof darkmode == 'undefined') {var darkmode = false;};
+        if (darkmode){$('.DarkModeToggle__Button').removeClass("is-hidden");};
+    </script>
+
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
 
