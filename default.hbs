@@ -13,7 +13,6 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -38,6 +37,14 @@
             </div>
         </footer>
 
+    </div>
+    <div class="drawer-menu">
+        <div class="navigation">
+            <a href="http://localhost:2368/" class="menu-item menu-item--with-icon">Home</a>
+            <a href="http://localhost:2368/docker" class="menu-item menu-item--with-icon">Docker</a>
+            <a href="http://localhost:2368/kubernetes" class="menu-item menu-item--with-icon">Kubernetes</a>
+            <a href="http://localhost:2368/traefik" class="menu-item menu-item--with-icon">Traefik</a>
+        </div>
     </div>
 
     {{!-- The big email subscribe modal content --}}
@@ -119,11 +126,18 @@
             });
         });
     </script>
-
+    <script>
+        $('.drawer-handle').click(function () {
+            $(".drawer-handle").toggleClass("open");
+            $(".drawer-menu").toggleClass("open");
+        });
+    </script>
     {{!-- switches: showcase & support_fizzy --}}
     <script>
         if (typeof darkmode == 'undefined') {var darkmode = false;};
         if (darkmode){$('.DarkModeToggle__Button').removeClass("is-hidden");};
+        if (typeof mobile_menu == 'undefined') {var mobile_menu = false;};
+        if (mobile_menu){$('.drawer').removeClass("is-hidden");};
     </script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
@@ -131,6 +145,6 @@
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
-
+    
 </body>
 </html>

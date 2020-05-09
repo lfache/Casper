@@ -32,7 +32,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 @import "custom/global.css";
 @import "custom/darkmode.css";
-
+@import "custom/menu-nav.css";
 
 body {
     background: #fff;
@@ -584,6 +584,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 @media (max-width: 700px) {
     .site-home-header .site-nav {
         margin-left: -5vw;
+        margin-right: -5vw;
     }
 
     .site-nav-main {
