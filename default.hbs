@@ -14,6 +14,7 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    
     {{ghost_head}}
 
 </head>
@@ -38,14 +39,11 @@
         </footer>
 
     </div>
-    <div class="drawer-menu">
+    <nav class="drawer-menu">
         <div class="navigation">
-            <a href="http://localhost:2368/" class="menu-item menu-item--with-icon">Home</a>
-            <a href="http://localhost:2368/docker" class="menu-item menu-item--with-icon">Docker</a>
-            <a href="http://localhost:2368/kubernetes" class="menu-item menu-item--with-icon">Kubernetes</a>
-            <a href="http://localhost:2368/traefik" class="menu-item menu-item--with-icon">Traefik</a>
+          {{navigation }}
         </div>
-    </div>
+    </nav>
 
     {{!-- The big email subscribe modal content --}}
     {{#if @labs.members}}
@@ -127,9 +125,13 @@
         });
     </script>
     <script>
-        $('.drawer-handle').click(function () {
+        $('.container').click(function () {
             $(".drawer-handle").toggleClass("open");
             $(".drawer-menu").toggleClass("open");
+            
+            $(".bar1").toggleClass("change");
+            $(".bar2").toggleClass("change");
+            $(".bar3").toggleClass("change");
         });
     </script>
     {{!-- switches: showcase & support_fizzy --}}

@@ -3,6 +3,7 @@
 
 .DarkModeToggle__Button {
     background-color: transparent;
+    fill: #fff;
 }
 
 .DarkModeToggle__Button svg {
